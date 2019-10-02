@@ -2,12 +2,9 @@
 import os
 import time
 
-path = "/Applications/GitHub/Python Basics/Python Drill 100"
+path = "/Applications/GitHub/Python Basics/Python_Drill_100"
 
 fName = "SeahawksGame.PNG"
-
-txt1Path = "/Applications/GitHub/Python Basics/Python Drill 100/file 1.txt"
-txt2Path = "/Applications/GitHub/Python Basics/Python Drill 100/file 2.txt"
 
 myDir = os.listdir(path)
 
