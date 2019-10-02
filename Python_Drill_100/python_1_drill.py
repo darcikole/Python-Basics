@@ -2,7 +2,7 @@
 import os
 import time
 
-path = "/Applications/GitHub/Python Basics/Python_Drill_100"
+path = "/Applications/GitHub/Python Basics/Python_Drill_100/Drill Files"
 
 fName = "SeahawksGame.PNG"
 
