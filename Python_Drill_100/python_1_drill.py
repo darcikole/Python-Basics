@@ -4,33 +4,22 @@ import time
 
 path = "/Applications/GitHub/Python Basics/Python_Drill_100/Drill Files"
 
-fName = "SeahawksGame.PNG"
-
 myDir = os.listdir(path)
 
 for file in myDir:
     print(file)
 
-
-newPath = os.path.join(path, fName)
-print(newPath)
-
-modificationTime = os.path.getmtime(path)
-realTime = time.ctime(modificationTime)
-
+for file in myDir:
+    if file.endswith(".PNG"):
+        print(os.path.join(path,file))
+    else:
+        continue
 
 for file in myDir:
     if file.endswith(".txt"):
+        theFile = os.path.join(path,file)
+        ModTime = os.path.getmtime(theFile)
+        realTime = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(ModTime))
         print(file,realTime)
-        
-    
-
-
-
-
-
-
-
-
-
-
+    else:
+        continue
