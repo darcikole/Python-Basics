@@ -20,7 +20,7 @@ with conn:
               
 for file in fileList:
     if file.endswith(".txt"):
-        c.executemany("INSERT INTO tbl_files(col_fileName) VALUES(?)",(file))
+        c.execute("INSERT INTO tbl_files(col_fileName) VALUES(?)",(file,))
         print(file)
 
 
