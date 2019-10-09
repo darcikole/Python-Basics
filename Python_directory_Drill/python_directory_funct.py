@@ -27,9 +27,8 @@ def center_window(self, w, h):
 
 
 def get_directory(self):
-    global dirname
     dirname = filedialog.askdirectory()
-    dir_path.set(dirname)
+    self.dir_path.set(dirname)
         
 
 
