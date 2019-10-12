@@ -41,14 +41,6 @@ def get_dest(self):
     dirname2 = filedialog.askdirectory()
     self.dir_path2.set(dirname2)
 
-def get_init_files(self):
-    path = get_src(self)
-    myDir = os.listdir(path)
-    for file in myDir:
-        if file.endswith(".txt"):
-            theFile = os.path.join(path, file)
-            self.txt_files.set(theFile)
-           
 
 
 def create_db(self):
@@ -76,23 +68,15 @@ def data_entry(self):
                 ModTime = os.path.getmtime(theFile)
                 realTime = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(ModTime))               
                 c.execute("INSERT INTO tbl_files(col_fileName, col_modified) VALUES(?,?)",(file,realTime))
-                print(file, realTime)        
+                shutil.move(theFile,self.dir_path2.get())
+                print(file, realTime,"File copied successfully.")
         conn.commit()
     conn.close()
 
 
 
-def move_files(self):
-    path = self.dir_path1.get()
-    myDir = os.listdir(path)
-    for file in myDir:
-        if file.endswith(".txt"):
-            theFile = os.path.join(path, file)
-            ModTime = os.path.getmtime(theFile)
-            realTime = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(ModTime))
-            shutil.move(theFile,self.dir_path2.get())
-            print(file, realTime,"File copied successfully.")
-        data_entry(self)
+
+        
 
         
 

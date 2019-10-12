@@ -29,7 +29,7 @@ def load_gui(self):
     self.btn2_dst = tk.Button(self.master,width=14,height=2, text='Browse',command=lambda:drill_mix_funct.get_dest(self))
     self.btn2_dst.grid(row=1,column=0,padx=(25,0),pady=(5,10), sticky=W)
 
-    self.btn3_move = tk.Button(self.master,width=14,height=3, text='Check files',command=lambda:drill_mix_funct.move_files(self))
+    self.btn3_move = tk.Button(self.master,width=14,height=3, text='Check files',command=lambda:drill_mix_funct.data_entry(self))
     self.btn3_move.grid(row=2,column=0,padx=(25,0),pady=(5,10), sticky=W)
 
     # Column 1+ Text Entries
